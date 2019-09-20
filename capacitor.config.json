@@ -1,0 +1,7 @@
+{
+  "appId": "com.my.qrcodesample",
+  "appName": "MyQrCodeSample",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}

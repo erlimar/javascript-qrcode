@@ -6,8 +6,16 @@ var canvas = document.getElementById('canvas')
 var context = canvas.getContext('2d')
 var video = document.getElementById('video')
 
+console.log('width:', document.body.offsetWidth)
+console.log('height:', document.body.offsetTop)
+
 function qrScannerHandler() {
+    context.beginPath();
+    context.rect(0, 0, 640, 480);
+    context.fillStyle = "red";
+    context.fill();
     context.drawImage(video, 0, 0, 640, 480)
+
     QrScanner.scanImage(canvas)
         .then(function (result) {
             let l = window.location
@@ -22,14 +30,14 @@ function qrScannerHandler() {
         })
 }
 
-document.getElementById("snap").addEventListener("click", function () {
-    context.drawImage(video, 0, 0, 640, 480)
-    qrScannerHandler()
-})
+// document.getElementById("snap").addEventListener("click", function () {
+//     context.drawImage(video, 0, 0, 640, 480)
+//     qrScannerHandler()
+// })
 
-document.getElementById("qrcode").addEventListener("click", function () {
-    document.querySelector("img").setAttribute('style', 'display:block')
-})
+// document.getElementById("qrcode").addEventListener("click", function () {
+//     document.querySelector("img").setAttribute('style', 'display:block')
+// })
 
 // Trigger photo take
 setInterval(qrScannerHandler, 1000)

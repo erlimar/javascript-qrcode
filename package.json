@@ -13,6 +13,9 @@
     "http-server": "^0.11.1"
   },
   "dependencies": {
+    "@capacitor/android": "^1.2.1",
+    "@capacitor/cli": "^1.2.1",
+    "@capacitor/core": "^1.2.1",
     "qr-scanner": "^1.1.1"
   }
 }
